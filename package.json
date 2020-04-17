@@ -36,7 +36,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "react-masonry-css": "^1.0.14"
   },
   "homepage": "https://github.com/iamtherealgd/gatsby-starter-22boxes-uno",
   "keywords": [

@@ -3,6 +3,8 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
+import "../utils/global.css"
+import Masonry from 'react-masonry-css'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -10,8 +12,33 @@ const BlogIndex = ({ data, location }) => {
     edge => edge.node.frontmatter.template === "post"
   )
 
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1
+  };
+
   return (
     <Layout location={location} title={siteTitle}>
+      <div style={{ marginTop: "2rem" }}>
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="my-masonry-grid"
+          columnClassName="my-masonry-grid_column">
+          <div><img src="https://picsum.photos/200/300" /></div>
+
+          <div><img src="https://picsum.photos/400/300" /></div>
+          <div><img src="https://picsum.photos/200/500" /></div>
+          <div><img src="https://picsum.photos/300/200" /></div>
+          <div><img src="https://picsum.photos/600/300" /></div>
+          <div> <Link to={"/whats-jamstack"}><img src="https://picsum.photos/700/400" /></Link></div>
+
+        </Masonry>
+
+      </div>
+
+      {/* <Gallery /> */}
       {/* <SEO title="All posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
