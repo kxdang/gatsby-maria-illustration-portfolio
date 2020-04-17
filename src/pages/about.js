@@ -16,9 +16,9 @@ const AboutPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="About" />
       <div style={{ marginTop: `30px`, fontFamily: `Montserrat` }}>
-        <h2 style={{ textAlign: "center" }}>Hey, I'm Duong Thuy Nguyen<span aria-label="wave" img="role">👋</span></h2>
+        <h2 style={{ textAlign: "center" }}>Hey, I'm Duong Thuy Nguyen <span aria-labelledby="wave" img="role">👋</span></h2>
         <div style={{ textAlign: `center` }}>
-          <img style={{ borderRadius: `50%` }} src={avatar} />
+          <img alt="profile-pic" style={{ borderRadius: `50%` }} src={avatar} />
         </div>
 
         <p style={{ textAlign: "center" }}>I also go by Maria.</p>
@@ -37,7 +37,6 @@ const AboutPage = ({ data, location }) => {
             <li>Big Planet Comics</li>
             <li>Bloomberg Businessweek</li>
             <li>CBC</li>
-
             <li>Chapterhouse Comics Store</li>
             <li>Courier Magazine</li>
             <li>Culture Trip</li>

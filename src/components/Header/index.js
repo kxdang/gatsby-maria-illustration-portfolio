@@ -5,7 +5,7 @@ import "./style.css"
 
 class Header extends React.Component {
   render() {
-    const { location } = this.props
+
 
     // const blogLinkStyle = {
     //   paddingBottom: location.pathname === "/" ? `5px` : `0px`,
