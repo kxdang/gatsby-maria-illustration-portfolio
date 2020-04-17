@@ -40,19 +40,19 @@ class Header extends React.Component {
 
             <li className="nav-li">
               <h1 className="li-h1">
-                <Link className="li-link" to={`/`} activeStyle={{ color: "red" }}>
+                <Link className="li-link" to={`/`} activeStyle={{ color: "#ff59b4" }}>
                   Work
                 </Link>
               </h1>
 
               <h1 className="li-h1" >
-                <Link className="li-link" to={`/about`} activeStyle={{ color: "red" }}>
+                <Link className="li-link" to={`/about`} activeStyle={{ color: "#ff59b4" }}>
                   About
                 </Link>
               </h1>
 
               <h1 className="li-h1">
-                <Link className="li-link" to={`/contact`} activeStyle={{ color: "red" }}>
+                <Link className="li-link" to={`/contact`} activeStyle={{ color: "#ff59b4" }}>
                   Contact
                 </Link>
               </h1>
