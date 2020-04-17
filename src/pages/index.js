@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 import "../utils/global.css"
 import Masonry from 'react-masonry-css'
+import Img from 'gatsby-image'
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -12,27 +13,36 @@ const BlogIndex = ({ data, location }) => {
     edge => edge.node.frontmatter.template === "post"
   )
 
+  const images = data.allFile
+  const image1 = data.allFile.nodes[0].childImageSharp.fluid
+
+
+
   const breakpointColumnsObj = {
     default: 4,
     1100: 3,
     700: 2,
     500: 1
   };
+  console.log(data.allFile)
+  console.log(image1)
 
   return (
-    <Layout location={location} title={siteTitle}>
+
+    < Layout location={location} title={siteTitle} >
       <div style={{ marginTop: "2rem" }}>
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column">
-          <div><img src="https://picsum.photos/200/300" /></div>
+          <div><Img fluid={data.allFile.nodes[0].childImageSharp.fluid} /></div>
+          <div><Img fluid={data.allFile.nodes[1].childImageSharp.fluid} /></div>
 
-          <div><img src="https://picsum.photos/400/300" /></div>
-          <div><img src="https://picsum.photos/200/500" /></div>
-          <div><img src="https://picsum.photos/300/200" /></div>
-          <div><img src="https://picsum.photos/600/300" /></div>
-          <div> <Link to={"/whats-jamstack"}><img src="https://picsum.photos/700/400" /></Link></div>
+          <div><Img fluid={data.allFile.nodes[2].childImageSharp.fluid} /> </div>
+          <div><Img fluid={data.allFile.nodes[3].childImageSharp.fluid} /></div>
+          <div><Img fluid={data.allFile.nodes[4].childImageSharp.fluid} /></div>
+          <div><Img fluid={data.allFile.nodes[5].childImageSharp.fluid} /></div>
+          <div><Img fluid={data.allFile.nodes[6].childImageSharp.fluid} /></div>
 
         </Masonry>
 
@@ -91,7 +101,7 @@ const BlogIndex = ({ data, location }) => {
           </article>
         )
       })} */}
-    </Layout>
+    </Layout >
   )
 }
 
@@ -119,6 +129,16 @@ export const pageQuery = graphql`
             description
             slug
             category
+          }
+        }
+      }
+    },
+    allFile(filter: {relativeDirectory: {eq: ""}}) {
+      nodes {
+        childImageSharp {
+          id
+          fluid {
+          ...GatsbyImageSharpFluid
           }
         }
       }
