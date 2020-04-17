@@ -63,3 +63,7 @@ a {
   padding-right: 4px;
   font-size: 23px;
 }
+
+ul, ol{
+  margin-left: 0;
+}

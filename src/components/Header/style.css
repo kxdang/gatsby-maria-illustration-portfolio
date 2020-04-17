@@ -8,10 +8,18 @@
     color: inherit;
 }
 .logo-img{
+    position: absolute;
     margin-right: 20px;
     margin-bottom: 0;
     min-width: 50;
     height: 70px;
+}
+
+@media only screen and (max-width: 420px) {
+    .logo-img {
+        display: none;
+    }
+
 }
 .header-nav{
     display: flex;

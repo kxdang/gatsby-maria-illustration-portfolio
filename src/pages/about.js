@@ -49,7 +49,6 @@ const AboutPage = ({ data, location }) => {
             <li>Orca Book Publishers</li>
             <li>Penguin Random House</li>
             <li>Quanta Magazine</li>
-            <li>The New York Times</li>
             <li>Report on Business</li>
             <li>Reveal News</li>
             <li>Simon & Schuster</li>
@@ -57,6 +56,7 @@ const AboutPage = ({ data, location }) => {
             <li>The Believer Magazine</li>
             <li>The Guardian Newspaper</li>
             <li>The National Post</li>
+            <li>The New York Times</li>
             <li>The New Republic Magazine</li>
             <li>The Walrus Magazine</li>
             <li>TKO Studio</li>
