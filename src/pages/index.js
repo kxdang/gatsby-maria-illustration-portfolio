@@ -132,7 +132,7 @@ export const pageQuery = graphql`
         }
       }
     },
-    allFile(filter: {relativeDirectory: {eq: "gallery"}}) {
+    allFile(sort: {order: ASC, fields: name},filter: {relativeDirectory: {eq: "gallery"}}) {
       edges {
         node {
           childImageSharp {
