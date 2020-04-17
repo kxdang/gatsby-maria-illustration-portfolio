@@ -26,6 +26,7 @@ const BlogIndex = ({ data, location }) => {
   };
   console.log(data.allFile)
   console.log(image1)
+  console.log(data.allFile.nodes[0].name)
 
   return (
 
@@ -37,13 +38,11 @@ const BlogIndex = ({ data, location }) => {
           columnClassName="my-masonry-grid_column">
           <div><Img fluid={data.allFile.nodes[0].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[1].childImageSharp.fluid} /></div>
-
-          <div><Img fluid={data.allFile.nodes[2].childImageSharp.fluid} /> </div>
+          <div><Img fluid={data.allFile.nodes[2].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[3].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[4].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[5].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[6].childImageSharp.fluid} /></div>
-
         </Masonry>
 
       </div>
@@ -141,6 +140,7 @@ export const pageQuery = graphql`
           ...GatsbyImageSharpFluid
           }
         }
+        name
       }
     }
   }
