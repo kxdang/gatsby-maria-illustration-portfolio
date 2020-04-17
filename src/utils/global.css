@@ -29,3 +29,37 @@ a {
   list-style-type: none;
   margin-bottom: 0;
 }
+
+.contact-list a{
+  color: #333;
+}
+
+
+.contact-list a svg{
+  color: #333;
+}
+
+.contact-list a:hover{
+  color: #ff59b4;
+}
+
+
+.contact-list li {
+  text-align: center;
+  list-style-type: none;
+}
+
+.contact-list li:hover{
+ color: #ff59b4;
+}
+
+.contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-item svg{
+  padding-right: 4px;
+  font-size: 23px;
+}
