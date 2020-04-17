@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `22Boxes Template Uno`,
+    title: `Maria Illustration`,
     author: {
-      name: `Gagandeep Singh`,
+      name: `Maria Nguyen`,
       summary: `22boxes.com`,
     },
     description: `22Boxes Gatsby template Uno`,

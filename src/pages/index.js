@@ -13,8 +13,8 @@ const BlogIndex = ({ data, location }) => {
     edge => edge.node.frontmatter.template === "post"
   )
 
-  const images = data.allFile
-  const image1 = data.allFile.nodes[0].childImageSharp.fluid
+  const images = data.allFile.edges
+
 
 
 
@@ -24,9 +24,11 @@ const BlogIndex = ({ data, location }) => {
     700: 2,
     500: 1
   };
-  console.log(data.allFile)
-  console.log(image1)
-  console.log(data.allFile.nodes[0].name)
+  // console.log(data.allFile)
+  // console.log(image1)
+  // console.log(data.allFile.nodes[0].name)
+  console.log(images)
+
 
   return (
 
@@ -36,18 +38,23 @@ const BlogIndex = ({ data, location }) => {
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column">
-          <div><Img fluid={data.allFile.nodes[0].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[1].childImageSharp.fluid} /></div>
+
+
+
+          {images.map((object) => (
+            <div key={object.node.childImageSharp.id}><Link to={`/${object.node.name}`}><Img fluid={object.node.childImageSharp.fluid} /></Link></div>
+          ))}
+          {/* <div><Img fluid={image1} /></div> */}
+          {/* <div><Img fluid={data.allFile.nodes[1].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[2].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[3].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[4].childImageSharp.fluid} /></div>
           <div><Img fluid={data.allFile.nodes[5].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[6].childImageSharp.fluid} /></div>
+          <div><Img fluid={data.allFile.nodes[6].childImageSharp.fluid} /></div> */}
         </Masonry>
-
       </div>
 
-      {/* <Gallery /> */}
+
       {/* <SEO title="All posts" />
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
@@ -132,16 +139,19 @@ export const pageQuery = graphql`
         }
       }
     },
-    allFile(filter: {relativeDirectory: {eq: ""}}) {
-      nodes {
-        childImageSharp {
-          id
-          fluid {
-          ...GatsbyImageSharpFluid
+    allFile(filter: {relativeDirectory: {eq: "gallery"}}) {
+      edges {
+        node {
+          childImageSharp {
+            id
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
+          name
         }
-        name
       }
     }
+  
   }
 `
