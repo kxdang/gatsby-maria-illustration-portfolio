@@ -5,10 +5,10 @@ module.exports = {
       name: `Maria Nguyen`,
       summary: `22boxes.com`,
     },
-    description: `22Boxes Gatsby template Uno`,
+    description: `Maria Illustration`,
     siteUrl: `https://22boxesgatsbyuno.netlify.com/`,
     social: {
-      twitter: `twentytwoboxes`,
+      twitter: `DTNart`,
     },
   },
   plugins: [

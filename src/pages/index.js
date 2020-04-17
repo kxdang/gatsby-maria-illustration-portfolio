@@ -19,7 +19,7 @@ const BlogIndex = ({ data, location }) => {
 
 
   const breakpointColumnsObj = {
-    default: 4,
+    default: 3,
     1100: 3,
     700: 2,
     500: 1
@@ -44,13 +44,6 @@ const BlogIndex = ({ data, location }) => {
           {images.map((object) => (
             <div key={object.node.childImageSharp.id}><Link to={`/${object.node.name}`}><Img fluid={object.node.childImageSharp.fluid} /></Link></div>
           ))}
-          {/* <div><Img fluid={image1} /></div> */}
-          {/* <div><Img fluid={data.allFile.nodes[1].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[2].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[3].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[4].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[5].childImageSharp.fluid} /></div>
-          <div><Img fluid={data.allFile.nodes[6].childImageSharp.fluid} /></div> */}
         </Masonry>
       </div>
 

@@ -24,3 +24,8 @@ a {
     text-decoration: none;
     box-shadow: none;
 }
+
+.client-list li{
+  list-style-type: none;
+  margin-bottom: 0;
+}
