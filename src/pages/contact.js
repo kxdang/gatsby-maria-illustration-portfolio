@@ -14,6 +14,12 @@ const AboutPage = ({ data, location }) => {
       <div style={{ marginTop: `30px`, fontFamily: `Montserrat` }}>
         <h2 style={{ textAlign: `center` }}>Contact</h2>
         <ul className="contact-list">
+
+          <li className="contact-item">
+            <FaEnvelopeOpen />
+            <Obfuscate email="hello@dtnart.com" />
+          </li>
+
           <li className="contact-item">
             <FaTwitter />
             <a
@@ -23,11 +29,6 @@ const AboutPage = ({ data, location }) => {
             >
               DTNart
           </a>
-          </li>
-
-          <li className="contact-item">
-            <FaEnvelopeOpen />
-            <Obfuscate email="hello@dtnart.com" />
           </li>
 
           <li className="contact-item">
